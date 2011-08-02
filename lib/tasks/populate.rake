@@ -59,8 +59,9 @@ namespace :db do
         prices = []
         while iterates <= times
           destination_id = airports_destination_ids.shift
+
           depart_date = Time.now.utc.to_date + Random.new.rand(2..365).day
-          return_date = Random.new.rand(0..1) == 0 ? depart_date + Random.new.rand(1..4).week : Random.new.rand(5..180).day
+          return_date = Random.new.rand(0..1) == 0 ? depart_date + Random.new.rand(1..4).week : depart_date + Random.new.rand(5..180).day
 
           prices.push({ '_id' => id, 'origin_id' => origin_id, 'destination_id' => destination_id,
                         'depart_date' => depart_date.to_time, 'return_date' => return_date.to_time,  'value' => Random.new.rand(150..1500) })
