@@ -67,7 +67,7 @@ describe 'search' do
 
     it 'depart dates should be only in season period' do
       # Дата отправления входит в сезонный период начиная с 10-09-2011 и заканчивая 30-11-2011
-      @month.each do |duration, results|
+      @season.each do |duration, results|
         results.each do |result|
           depart_date = Date.parse(result['price']['depart_date'])
           (depart_date >= @start_depart_date).should be_true
@@ -78,8 +78,8 @@ describe 'search' do
 
     it 'return dates should be match for duration type (1, 2, 3 or 4 weeks) from depart date' do
       # Дата возвращения должна совпадать с длительностью пребывания в неделях
-      @month.each do |duration, results|
-        if duration != 0
+      [1, 2, 3, 4].each do |duration|
+        [@month[duration], @season[duration]].each do |results|
           results.each do |result|
             depart_date = Date.parse(result['price']['depart_date'])
             return_date = Date.parse(result['price']['return_date'])
@@ -87,6 +87,11 @@ describe 'search' do
           end
         end
       end
+    end
+
+    it 'count of all available return dates should be more than (1, 2, 3 or 4 weeks) multiple return dates' do
+      (@month[0].size > (@month[1].size + @month[2].size + @month[3].size + @month[4].size)).should be_true
+      (@season[0].size > (@season[1].size + @season[2].size + @season[3].size + @season[4].size)).should be_true
     end
   end
 end

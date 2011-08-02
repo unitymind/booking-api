@@ -52,8 +52,7 @@ namespace :db do
       id = 1
       airports_origin_id_range.each do |origin_id|
         puts "   -->".bold + " генерация цен ".green + 'для ' + 'origin_id '.bold + origin_id.to_s
-        airports_destination_ids = airports_origin_id_range.to_a
-        airports_destination_ids = airports_destination_ids.sort_by { rand }
+        airports_destination_ids = airports_origin_id_range.to_a.sort_by { rand }
 
         times = 10 + Random.new.rand(0..390)
         iterates = 1
@@ -61,8 +60,10 @@ namespace :db do
         while iterates <= times
           destination_id = airports_destination_ids.shift
           depart_date = Time.now.utc.to_date + Random.new.rand(2..365).day
+          return_date = Random.new.rand(0..1) == 0 ? depart_date + Random.new.rand(1..4).week : Random.new.rand(5..180).day
+
           prices.push({ '_id' => id, 'origin_id' => origin_id, 'destination_id' => destination_id,
-                        'depart_date' => depart_date.to_time, 'return_date' => (depart_date + Random.new.rand(1..4).week).to_time,  'value' => Random.new.rand(150..1500) })
+                        'depart_date' => depart_date.to_time, 'return_date' => return_date.to_time,  'value' => Random.new.rand(150..1500) })
           iterates += 1
           id += 1
         end
