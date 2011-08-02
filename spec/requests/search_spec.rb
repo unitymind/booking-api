@@ -45,7 +45,6 @@ describe 'search' do
       @month = {}
       @season = {}
 
-      visit '/search/Moscow/10-09-2011/month/0'
       [0, 1, 2, 3, 4].each do |duration|
         visit "/search/Moscow/10-09-2011/month/#{duration}"
         @month[duration] = parse_from_json(source)
