@@ -17,7 +17,8 @@ class SearchController < ApplicationController
         results.push({'destination' => {'id' => price['destination_id'],
                                         'latitude' => destinations[price['destination_id']][1],
                                         'longitude' => destinations[price['destination_id']][0]},
-                     'price' => {'value' => price['value'], 'depart_date' => price['depart_date'].to_date,
+                     'price' => {'value' => price['value'],
+                                 'depart_date' => price['depart_date'].to_date,
                                  'return_date' => price['return_date'].to_date}
                      })
       end

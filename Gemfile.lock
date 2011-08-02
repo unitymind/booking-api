@@ -29,6 +29,7 @@ GEM
       activesupport (= 3.0.9)
     activesupport (3.0.9)
     arel (2.0.10)
+    backports (2.3.0)
     bson (1.3.1)
     bson_ext (1.3.1)
     builder (2.1.2)
@@ -115,6 +116,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  backports
   bson_ext
   capybara
   colored

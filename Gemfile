@@ -23,6 +23,7 @@ gem 'mongoid'
 gem 'bson_ext'
 gem 'colored'
 gem 'yajl-ruby'
+gem 'backports'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
