@@ -1,9 +1,5 @@
 # Прототип веб-сервиса с json-интерефейсом для поиска минимальных цен на авиаперелеты
 
-[http://booking-api.unitymind.org/](http://booking-api.unitymind.org/) - запущенный веб-сервис, соответствующий текущей версии.
-
-Пример запроса: http://booking-api.unitymind.org/search/Moscow/10-09-2011/month/0
-
 ## Постановка задачи
 
 Функциональные и иные требования в формате PDF доступны [здесь](https://github.com/unitymind/bookingapi/blob/master/doc/aviasales-test.pdf?raw=true).
