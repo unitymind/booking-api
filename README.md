@@ -2,7 +2,7 @@
 
 ## Постановка задачи
 
-Функциональные и иные требования в формате PDF доступны [здесь](https://github.com/unitymind/bookingapi/blob/master/doc/aviasales-test.pdf?raw=true).
+Функциональные и иные требования в формате PDF доступны [здесь](https://raw.githubusercontent.com/unitymind/booking-api/master/doc/aviasales-test.pdf).
 
 ## Выбор базы данных
 Поскольку в требованиях не было ограничения по использованию СУБД, то выбрана [MongoDB](http://mongodb.org) в виду быстродействия и простоты использования, а также поддержки geospatial индексов.
